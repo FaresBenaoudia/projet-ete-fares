@@ -1,0 +1,503 @@
+-- Insert product categories
+INSERT INTO product_categories (category_name) VALUES 
+('Energy and Performance'),
+('Hydration'),
+('Sports Performance'),
+('Sleep and Relaxation'),
+('Health and Wellness'),
+('Cognitive Support'),
+('Skin Care and Anti-Aging'),
+('Metabolic and Digestive Support'),
+('Reproductive and Hormonal Support'),
+('Joint and Bone Support');
+
+-- Sleep and Relaxation Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have trouble falling asleep?', 'oui_non', 4);
+SET @q1 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How long does it take you to fall asleep on average?', 'choix_multiple', 4);
+SET @q2 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you wake up frequently during the night?', 'oui_non', 4);
+SET @q3 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How many times do you wake up during the night on average?', 'choix_multiple', 4);
+SET @q4 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('What typically causes you to wake up?', 'choix_multiple', 4);
+SET @q5 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you feel rested when you wake up in the morning?', 'oui_non', 4);
+SET @q6 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How many hours of sleep do you get on average per night?', 'choix_multiple', 4);
+SET @q7 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q2, 'Less than 15 minutes'),
+(@q2, '15-30 minutes'),
+(@q2, 'More than 30 minutes'),
+(@q4, '1-2 times'),
+(@q4, '3-4 times'),
+(@q4, 'More than 4 times'),
+(@q5, 'Noise'),
+(@q5, 'Stress'),
+(@q5, 'Other'),
+(@q7, 'Less than 6 hours'),
+(@q7, '6-8 hours'),
+(@q7, 'More than 8 hours');
+
+COMMIT;
+
+-- Energy and Performance Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you often feel mentally fatigued?', 'oui_non', 1);
+SET @q8 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have trouble concentrating?', 'oui_non', 1);
+SET @q9 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How often do you feel mentally fatigued?', 'choix_multiple', 1);
+SET @q10 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you consume caffeine regularly?', 'oui_non', 1);
+SET @q11 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you find it hard to stay motivated?', 'oui_non', 1);
+SET @q12 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you get enough physical exercise?', 'oui_non', 1);
+SET @q13 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('What kind of exercise do you engage in?', 'choix_multiple', 1);
+SET @q14 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q10, 'Rarely'),
+(@q10, 'Sometimes'),
+(@q10, 'Often'),
+(@q14, 'Cardio'),
+(@q14, 'Strength training'),
+(@q14, 'Mixed');
+
+COMMIT;
+
+-- Hydration Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience muscle cramps frequently?', 'oui_non', 2);
+SET @q15 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you find it hard to stay hydrated?', 'oui_non', 2);
+SET @q16 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you often feel tired or lethargic?', 'oui_non', 2);
+SET @q17 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How many glasses of water do you drink per day?', 'choix_multiple', 2);
+SET @q18 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you consume electrolyte drinks?', 'oui_non', 2);
+SET @q19 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you sweat excessively during exercise?', 'oui_non', 2);
+SET @q20 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you feel dizzy or lightheaded often?', 'oui_non', 2);
+SET @q21 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q18, 'Less than 4 glasses'),
+(@q18, '4-6 glasses'),
+(@q18, '7-9 glasses'),
+(@q18, '10 or more glasses');
+
+COMMIT;
+
+-- Sports Performance Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to increase your muscle mass?', 'oui_non', 3);
+SET @q22 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you want to enhance your endurance?', 'oui_non', 3);
+SET @q23 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience muscle soreness after workouts?', 'oui_non', 3);
+SET @q24 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How many days a week do you workout?', 'choix_multiple', 3);
+SET @q25 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('What is your primary goal?', 'choix_multiple', 3);
+SET @q26 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How long does muscle soreness last after workouts?', 'choix_multiple', 3);
+SET @q27 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you use any performance supplements currently?', 'oui_non', 3);
+SET @q28 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q25, '1-2 days'),
+(@q25, '3-4 days'),
+(@q25, '5 or more days'),
+(@q26, 'Building muscle'),
+(@q26, 'Improving endurance'),
+(@q26, 'Both'),
+(@q27, '1-2 days'),
+(@q27, '3-4 days'),
+(@q27, 'More than 4 days');
+
+COMMIT;
+
+-- Health and Wellness Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to boost your immune system?', 'oui_non', 5);
+SET @q29 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you want to improve your cardiovascular health?', 'oui_non', 5);
+SET @q30 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you interested in antioxidants to fight free radicals?', 'oui_non', 5);
+SET @q31 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you get sick frequently?', 'oui_non', 5);
+SET @q32 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you consume a diet rich in fruits and vegetables?', 'oui_non', 5);
+SET @q33 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you exercise regularly?', 'oui_non', 5);
+SET @q34 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience high levels of stress?', 'oui_non', 5);
+SET @q35 := LAST_INSERT_ID();
+
+-- Cognitive Support Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to improve your memory?', 'oui_non', 6);
+SET @q36 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you want to enhance your mental focus?', 'oui_non', 6);
+SET @q37 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking for ways to reduce mental stress?', 'oui_non', 6);
+SET @q38 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you find it hard to remember things?', 'oui_non', 6);
+SET @q39 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you feel your focus diminishes as the day progresses?', 'oui_non', 6);
+SET @q40 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How would you rate your stress levels?', 'choix_multiple', 6);
+SET @q41 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you use any cognitive supplements currently?', 'oui_non', 6);
+SET @q42 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q41, 'Low'),
+(@q41, 'Moderate'),
+(@q41, 'High');
+
+COMMIT;
+
+-- Skin Care and Anti-Aging Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you concerned about skin aging and wrinkles?', 'oui_non', 7);
+SET @q43 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you want to improve your skin elasticity?', 'oui_non', 7);
+SET @q44 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to improve your skin hydration?', 'oui_non', 7);
+SET @q45 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you use anti-aging skincare products?', 'oui_non', 7);
+SET @q46 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you exposed to the sun frequently?', 'oui_non', 7);
+SET @q47 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have dry or oily skin?', 'choix_multiple', 7);
+SET @q48 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have any specific skin conditions?', 'oui_non', 7);
+SET @q49 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q48, 'Dry'),
+(@q48, 'Oily'),
+(@q48, 'Combination');
+
+COMMIT;
+
+-- Metabolic and Digestive Support Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to manage your weight?', 'oui_non', 8);
+SET @q50 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience digestive issues?', 'oui_non', 8);
+SET @q51 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you interested in improving your metabolic health?', 'oui_non', 8);
+SET @q52 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you on any specific diet?', 'oui_non', 8);
+SET @q53 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How often do you exercise?', 'choix_multiple', 8);
+SET @q54 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience bloating or indigestion frequently?', 'oui_non', 8);
+SET @q55 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you monitor your blood sugar levels?', 'oui_non', 8);
+SET @q56 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q54, 'Daily'),
+(@q54, 'Weekly'),
+(@q54, 'Occasionally');
+
+COMMIT;
+
+-- Reproductive and Hormonal Support Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to improve your libido?', 'oui_non', 9);
+SET @q57 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you experiencing hormonal imbalances?', 'oui_non', 9);
+SET @q58 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you trying to boost your reproductive health?', 'oui_non', 9);
+SET @q59 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience hormonal mood swings?', 'oui_non', 9);
+SET @q60 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you undergoing any hormone therapy?', 'oui_non', 9);
+SET @q61 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have regular menstrual cycles (for women)?', 'oui_non', 9);
+SET @q62 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience any reproductive health issues?', 'oui_non', 9);
+SET @q63 := LAST_INSERT_ID();
+
+COMMIT;
+
+-- Joint and Bone Support Questions and Choices
+START TRANSACTION;
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience joint pain or stiffness?', 'oui_non', 10);
+SET @q64 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Are you looking to improve your bone health?', 'oui_non', 10);
+SET @q65 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have issues with mobility?', 'oui_non', 10);
+SET @q66 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('How would you describe your joint pain?', 'choix_multiple', 10);
+SET @q67 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you take any joint supplements currently?', 'oui_non', 10);
+SET @q68 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you have a history of bone fractures?', 'oui_non', 10);
+SET @q69 := LAST_INSERT_ID();
+
+INSERT INTO questions (question, type, parent_id) VALUES
+('Do you experience swelling in your joints?', 'oui_non', 10);
+SET @q70 := LAST_INSERT_ID();
+
+INSERT INTO choices (question_id, choice) VALUES
+(@q67, 'Mild'),
+(@q67, 'Moderate'),
+(@q67, 'Severe');
+
+
+
+
+
+INSERT INTO product (name, category_id) VALUES
+('Taurine Powder', 1),
+('D-Ribose Powder', 1),
+('Guarana Extract', 1),
+('Caffeine Capsules', 1),
+('Dandelion Extract Powder', 1),
+('Magnesium Glycinate Powder', 2),
+('Magnesium Citrate Powder', 2),
+('Potassium Chloride Powder', 2),
+('Potassium Citrate Powder', 2),
+('Micronized Creatine Monohydrate Powder', 3),
+('Creatine Monohydrate Capsules', 3),
+('Beta-Alanine Powder', 3),
+('L-Glutamine Powder', 3),
+('AAKG (L-Arginine Alpha-Ketoglutarate) Powder', 3),
+('L-Arginine Powder', 3),
+('L-Carnitine Powder', 3),
+('ALCAR HCl (Acetyl L-Carnitine HCl) Powder', 3),
+('90% Whey Protein Isolate Powder', 3),
+('Pea Protein Powder', 3),
+('Grass-Fed Whey Protein Concentrate Powder', 3),
+('80% Whey Protein Concentrate Powder', 3),
+('Hydrolyzed Whey Protein Isolate Powder', 3),
+('BCAA 2:1:1 (Branched-Chain Amino Acids) Powder', 3),
+('BCAA 3:1:2 (Branched-Chain Amino Acids) Powder', 3),
+('Essential Amino Acids (EAA) Powder', 3),
+('Essential Amino Acids (EAA) Capsules', 3),
+('L-Leucine Powder', 3),
+('L-Theanine Powder', 4),
+('L-Theanine Capsules', 4),
+('Melatonin Powder', 4),
+('Glycine Powder', 4),
+('GABA Powder', 4),
+('Rhodiola Extract Powder (3% salidroside)', 4),
+('Ascorbic Acid (Vitamin C) Powder', 5),
+('Vitamin D3 + K2 Capsules', 5),
+('Vitamin D3 Capsules', 5),
+('1% Methylcobalamin (Vitamin B12) Powder', 5),
+('98% Pure Resveratrol Powder', 5),
+('Resveratrol Capsules', 5),
+('Reduced Glutathione Powder', 5),
+('NMN (Nicotinamide Mononucleotide) Powder', 5),
+('NMN Capsules', 5),
+('Organic Spirulina Powder', 5),
+('Milk Thistle Extract Powder', 5),
+('Alpha GPC (L-Alpha Glycerylphosphorylcholine) Powder', 6),
+('L-Tyrosine Powder', 6),
+('Organic Lion\'s Mane Powder', 6),
+('Organic Lion\'s Mane Mushroom Extract Powder', 6),
+('Lion\'s Mane Mushroom Extract Capsules', 6),
+('Cordyceps Extract Powder', 6),
+('Reishi Mushroom Extract Powder', 6),
+('Turkey Tail Mushroom Extract Powder', 6),
+('N-Acetyl L-Cysteine (NAC) Powder', 6),
+('N-Acetyl-L-Cysteine (NAC) Capsules', 6),
+('Collagen Peptides Powder', 7),
+('Hydrolyzed Collagen (Fish) Powder', 7),
+('Hydrolyzed Collagen (Chicken) Powder', 7),
+('Chondroitin Sulfate Powder', 7),
+('Niacinamide (Vitamin B3) Powder', 7),
+('Niacin (Vitamin B3) Powder', 7),
+('Niacin Capsules', 7),
+('Hyaluronic Acid (Sodium Hyaluronate) Powder', 7),
+('Shilajit Extract Powder', 7),
+('HMB (Calcium HMB) Powder', 8),
+('HMB Capsules', 8),
+('Betaine Anhydrous (TMG) Powder', 8),
+('Phenylethylamine HCl Powder', 8),
+('D-Mannose Powder', 8),
+('Ginger Extract Powder', 8),
+('Longjack Extract (Tongkat Ali) Powder', 9),
+('Longjack Extract (Tongkat Ali) Capsules', 9),
+('Tribulus Terrestris Extract Powder', 9),
+('Horny Goat Weed Extract Powder', 9),
+('Organic Maca Root Extract Powder', 9),
+('Ashwagandha Extract Powder', 9),
+('Ashwagandha Extract Capsules', 9),
+('MSM (Methylsulfonylmethane) Powder', 10),
+('Inositol (Vitamin B8) Powder', 11),
+('Magnesium Glycinate Capsules', 11),
+('Magnesium Citrate Powder', 11),
+('Potassium Chloride Powder', 11),
+('Potassium Citrate Powder', 11),
+('L-Lysine HCl Powder', 11),
+('Multivitamin Capsules for Men', 12),
+('Reishi Mushroom Extract Powder', 12),
+('Berberine HCl Powder', 12),
+('Astaxanthin Capsules', 12),
+('Curcumin (Turmeric) Powder', 12),
+('Curcumin (Turmeric) Capsules', 12),
+('Quercetin Dihydrate Powder', 12);
+
+
+
+
+
+
+
+
+
+COMMIT;
